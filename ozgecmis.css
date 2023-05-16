@@ -61,6 +61,37 @@
     margin-left: 0px;
 }
 
+.iletisim{
+    background-color:  rgba(216, 212, 212, 0.936);
+    margin-left: 20px;
+    width: 250px;
+    height: 500px;
+    border-radius: 2%;
+    
+}
+.iletisim .img{
+    margin: 0 auto;
+    margin: 20px auto 0;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.iletisim h2{
+    margin-top: 10px;
+    text-align: center;
+}
+.iletisim h5{
+    margin-top: 10px;
+    text-align: center;
+
+}
+.iletisim p{
+    margin-top: 10px;
+    text-align: center;
+}
+
 
 @media screen and (max-width: 768px) {
     .text {
