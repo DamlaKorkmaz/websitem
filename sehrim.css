@@ -1,0 +1,50 @@
+.container {
+    margin-top: 10px;
+}
+
+.carousel-inner img {
+    max-height: 450px;
+    /* Sliderın istediğiniz yüksekliğini burada belirleyebilirsiniz */
+}
+
+h1 {
+    margin-top: 70px;
+    text-align: center;
+    color: rgb(215, 150, 70);
+    font-family: Brush Script MT;
+    font-size: 100px;
+}
+
+h2 {
+    color: rgb(215, 150, 70);
+}
+
+p {
+    color: rgb(238, 241, 243);
+    text-align: center;
+}
+
+.row p {
+    color: black;
+}
+
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item {
+    transition: none !important;
+    /* Geçiş efektini kapat */
+}
+
+body {
+    background-color: rgba(24, 25, 23, 0.851);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
