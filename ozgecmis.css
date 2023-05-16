@@ -1,0 +1,77 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+}
+.wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.background-color{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: fixed;
+}
+.bg-1{
+    flex: 1;
+    background-color:rgba(24, 25, 23, 0.851) ;
+    z-index: -1;
+}
+.bg-2{
+    flex: 1;
+    background-color:rgba(83, 85, 79, 0.851) ;
+    z-index: -1;
+}
+.genel-kutu{
+    width: 75%;
+    min-height: 85vh;
+    position: absolute;
+    display: block;
+    justify-content: top;
+    align-items: center;
+    background-color: rgba(254, 254, 254, 0.936);
+    border: 2px solid;
+    margin-top: 90px;
+}
+.genel-kutu h1{
+    color: rgb(215, 150, 70);
+    font-size: 55px;
+    font-family: Brandley Hand;
+    margin-bottom:20px ;
+    text-align: center;
+    margin-top: 11px;
+    text-transform: capitalize;
+}
+.kutu2{
+    width: 90%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: space-between; /* Eğitim Bilgileri ve Hobileri yan yana hizalar */
+    align-items: flex-start;
+    background-color: rgba(229, 226, 226, 0.936);
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+.text{
+    margin-left: 0px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .text {
+      display: block;
+    }
+    .text > div {
+      margin-bottom: 20px;
+    }
+    .img {
+        max-width: 100%;
+        height: auto;
+    }
+  }
+  
