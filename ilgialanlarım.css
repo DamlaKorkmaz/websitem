@@ -1,0 +1,85 @@
+body{
+    display: block;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgba(24, 25, 23, 0.851) ;
+}
+.wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@450;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+}
+.wrapper .carousel{
+    margin-top: 250px;
+    white-space: nowrap;
+}
+.carousel img{
+    height: 500px;
+    object-fit: cover;
+    margin-left: 5px;
+    width: calc(100% /3);
+}
+h2 {
+    margin-top: 100px;
+    text-align: center;
+    color: rgb(215, 150, 70);
+    font-family: Brush Script MT;
+    font-size: 100px;
+    justify-content: top;
+    position: absolute;
+    display: block;
+}
+
+.bar{
+    background-color:  rgb(215, 150, 70);
+    margin-left: 80px;
+    margin-right: 40px;
+    height: 50px;
+}
+.bar h3{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 10px;
+}
+.container{
+    background: #eee;
+}
+.card{
+    background-color: white;
+    padding: 1rem;
+    border:solid 1px #ddd;
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+.card img{
+    width: 200px;
+}
+.card h4{
+    text-align: center
+}
+.row{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.card .content {
+    display: flex;
+    align-items: center;
+}
+
+.card .content img {
+    margin-right: 10px;
+}
