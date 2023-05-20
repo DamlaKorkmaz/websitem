@@ -1,31 +1,37 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;  
-}
-.wrapper{
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-self: center;
-}
-.background-color{
+  }
+  
+  .background-color {
     width: 100%;
     min-height: 100vh;
     display: flex;
     position: fixed;
-}
-.bg-1{
+  }
+  
+  .bg-1 {
     flex: 1;
-    background-color:rgba(24, 25, 23, 0.851) ;
+    background-color: rgba(24, 25, 23, 0.851);
     z-index: -1;
-}
-.bg-2{
+  }
+  
+  .bg-2 {
     flex: 1;
-    background-color:rgba(83, 85, 79, 0.851) ;
+    background-color: rgba(83, 85, 79, 0.851);
     z-index: -1;
-}
-.genel-kutu{
+  }
+  
+  .genel-kutu {
     width: 75%;
     min-height: 85vh;
     position: absolute;
@@ -35,17 +41,19 @@
     background-color: rgba(254, 254, 254, 0.936);
     border: 2px solid;
     margin-top: 90px;
-}
-.genel-kutu h1{
+  }
+  
+  .genel-kutu h1 {
     color: rgb(215, 150, 70);
     font-size: 55px;
     font-family: Brandley Hand;
-    margin-bottom:20px ;
+    margin-bottom: 20px;
     text-align: center;
     margin-top: 11px;
     text-transform: capitalize;
-}
-.kutu2{
+  }
+  
+  .kutu2 {
     width: 90%;
     min-height: 70vh;
     display: flex;
@@ -56,20 +64,21 @@
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-}
-.text{
+  }
+  
+  .text {
     margin-left: 0px;
-}
-
-.iletisim{
-    background-color:  rgba(216, 212, 212, 0.936);
+  }
+  
+  .iletisim {
+    background-color: rgba(216, 212, 212, 0.936);
     margin-left: 20px;
     width: 250px;
     height: 500px;
     border-radius: 2%;
-    
-}
-.iletisim .img{
+  }
+  
+  .iletisim .img {
     margin: 0 auto;
     margin: 20px auto 0;
     display: block;
@@ -77,32 +86,50 @@
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-}
-.iletisim h2{
+  }
+  
+  .iletisim h2 {
     margin-top: 10px;
     text-align: center;
-}
-.iletisim h5{
+  }
+  
+  .iletisim h5 {
     margin-top: 10px;
     text-align: center;
-
-}
-.iletisim p{
+  }
+  
+  .iletisim p {
     margin-top: 10px;
     text-align: center;
-}
-
-
-@media screen and (max-width: 768px) {
-    .text {
-      display: block;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .genel-kutu {
+      width: 90%;
+      margin-top: 70px;
     }
-    .text > div {
+  
+    .kutu2 {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .iletisim {
+      margin-left: 0;
       margin-bottom: 20px;
+      width: 100%;
     }
-    .img {
-        max-width: 100%;
-        height: auto;
+  
+    .text {
+      margin-left: 0;
+    }
+  
+    .iletisim .img {
+      margin: 0 auto;
+      margin-top: 20px;
     }
   }
   
+  @media (max-width: 600px) {
+    
+  }
