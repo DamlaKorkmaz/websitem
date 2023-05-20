@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-pzjw8f+ua6mzKtb62ndL3Wd5LKaBo7XFbd4/zfczE4hT8/1qQ5K62XQOmXz4W2Tn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-wMxk2sjv+mFBsD9UjD/QJO5GdLehKRg4Owq8Mv8j7E2TteuKAhXvDFlY7ZnvPrjcKdIuTBl5IsaQDGOK5s2zUg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <title>İletisim</title>
@@ -15,40 +20,62 @@
 
 <body>
   <!-- Menu Başlangıç -->
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-dark fixed-top">
 
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">İletişim</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-droplet"></i>Damla Korkmaz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Hakkinda.html">Anasayfa</a>
+            <a class="nav-link" href="hakkinda.html">Hakkında</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sehrim.html">Şehrim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">İletişim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Giriş</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <!-- Menü Bitiş -->
   <div class="background-color">
     <div class="bg-1"></div>
     <div class="bg-2"></div>
   </div>
+  <!--
   <div class="container">
     <h2>İletişim Bilgileri</h2>
+    
     <form id="contact" action="iletisim.php" method="post">
       <label for="isim">İsim:</label>
       <input type="text" name="ad" placeholder="İsim">
       <label for="soyisim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soyisim:</label>
-      <input type="text" placeholder="Soyisim"> <br> <br>
+      <input type="text" name="soyad" placeholder="Soyisim"> <br> <br>
       <label for="email">Email:</label>
-      <input type="email" placeholder="Email">
+      <input type="email" name="email" placeholder="Email">
       <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cinsiyet:&nbsp;&nbsp;</label>
-      Kadın <input type="radio" name="cinsiyetradio">
-      &nbsp;&nbsp;Erkek <input type="radio" name="cinsiyetradio"> <br> <br>
+      Kadın <input type="radio" name="cinsiyet" value="Kadın">
+      &nbsp;&nbsp;Erkek <input type="radio" name="cinsiyet" value="Erkek"> <br> <br>
       <input type="file"> <br> <br>
       <label for="dil">Bilinen Yazılım Dilleri:</label> <br>
       <input type="checkbox" name="dil[]" value="C++ -">C<br>
@@ -66,7 +93,120 @@
       <input type="reset" value="Temizle">
     </form>
   </div>
+-->
 
+  <section class="container">
+    <header>İletişim Formu</header>
+    <form id="contact" action="iletisim.php" method="post" class="form" onsubmit="return validateForm()">
+      <div class="column">
+        <div class="input-box">
+          <label>İsim</label>
+          <input type="text" name="ad" placeholder="İsminiz" required />
+        </div>
+        <div class="input-box">
+          <label>Soyisim</label>
+          <input type="text"name="soyad" placeholder="Soyadınız"required />
+        </div>
+      </div>
+      <div class="input-box">
+        <label>Email </label>
+        <input type="text" name="email" placeholder="Mail adresinizi giriniz" required />
+      </div>
+      <div class="column">
+        <div class="input-box">
+          <label>Kullanıcı adı</label>
+          <input type="text" name="kullaniciadi" placeholder="Kullanıcı adı giriniz." />
+        </div>
+        <div class="input-box">
+          <label>Doğum Tarihi</label>
+          <input type="date" name="date" placeholder="Doğum Tarihiniz" />
+        </div>
+      </div>
+      <div class="gender-box">
+        <h3>Cinsiyet</h3>
+        <div class="gender-option">
+          <div class="gender">
+            <input type="radio" id="check-erkek" name="gender" />
+            <label for="check-erkek">Erkek</label>
+          </div>
+          <div class="gender">
+            <input type="radio" id="check-kadin" name="gender" />
+            <label for="check-kadin">Kadın</label>
+          </div>
+          <div class="gender">
+            <input type="radio" id="check-other" name="gender" />
+            <label for="check-other">Söylemeyi tercih etmiyorum.</label>
+          </div>
+        </div>
+      </div>
+      <div class="language-box">
+        <h3>Bilinen Programlama Dilleri</h3>
+        <div class="language-option">
+          <div class="language">
+            <input type="checkbox" name="lang" />
+            <label for="check-erkek">C++</label>
+          </div>
+          <div class="language">
+            <input type="checkbox" name="lang" />
+            <label for="check-erkek">C#</label>
+          </div>
+          <div class="language">
+            <input type="checkbox" name="lang" />
+            <label for="check-erkek">Pyhton</label>
+          </div>
+          <div class="language">
+            <input type="checkbox" name="lang" />
+            <label for="check-erkek">Java</label>
+          </div>
+          <div class="language">
+            <input type="checkbox" name="lang" />
+            <label for="check-erkek">Web Dilleri</label>
+          </div>
+          <div class="language">
+            <input type="checkbox" name="lang" />
+            <label for="check-erkek">Diğer</label>
+          </div>
+        </div>
+      </div>
+      <div class="input-box address">
+        <div class="select-box">
+          <select name="ulke">
+            <option hidden>Ülke</option>
+            <option>Türkiye</option>
+            <option>Amerika</option>
+            <option>Hindistan</option>
+            <option>Japonya</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+        <br>
+        <div class="message">
+          <label for="mesajalanı">Mesaj:</label><br>
+          <textarea name="mesaj" id="mesajalanı" cols="66" rows="2" placeholder="Mesaj bırakın..."></textarea>
+        </div>
+        <button type="submit" class="btn" value="Gönder">Gönder</button>
+        <button type="reset" class="btn" value="Temizle">Temizle</button>
+    </form>
+  </section>
+  <script>
+    function validateForm() {
+      var adInput = document.getElementById("ad");
+      var soyadInput = document.getElementById("soyad");
+      var emailInput = document.getElementById("email");
+  
+      if (adInput.value.trim() === "" || soyadInput.value.trim() === "" || emailInput.value.trim() === "") {
+        alert("Lütfen zorunlu alanları doldurunuz.");
+        return false;
+      }
+  
+      return true;
+    }
+    document.getElementById("contact").addEventListener("submit", function(event) {
+    if (!validateForm()) {
+      event.preventDefault();
+    }
+  });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
