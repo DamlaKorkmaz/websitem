@@ -2,13 +2,14 @@
     padding :0;
     margin: 0;
     box-sizing: border-box;
-    font-family:Brandley Hand ;
+    
 }
 body
 {
     background-color: rgba(24, 25, 23, 0.851);
 }
 .hakkimda{
+    font-family:Brandley Hand ;
     width: 100%;
     height: 100%;
     display: flex;
@@ -21,22 +22,22 @@ body
     max-width: 100%;
 }
 .text{
-    width: 550px;
+    width: 700px;
     max-width: 100%;
     padding:0 10px ;
 }
 .content{
-    width: 1280px;
+    width: 1200px;
     max-width: 95%;
-    margin: 0 auto;
-    display: flex;
+    margin:  auto;
+    display: flex   ;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
 .text h1{
     color: rgb(215, 150, 70);
-    font-size: 65px;
+    font-size: 55px;
     margin-bottom:20px ;
     text-transform: capitalize;
 }
@@ -49,12 +50,12 @@ letter-spacing: 2;
 }
 .text p{
     color: #c0c4d6;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
     letter-spacing: 1px;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
-button{
+.button{
     background-color:rgb(215, 150, 70) ;
     color: #fff;
     border: 2px solid transparent;
@@ -65,7 +66,7 @@ button{
     font-weight: bold;
 
 }
-button:hover{
+.button:hover{
     transform: scale(1,2);
     background-color: transparent;
     border: 1px solid rgb(215, 150, 70);
