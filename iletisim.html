@@ -62,50 +62,17 @@
     <div class="bg-1"></div>
     <div class="bg-2"></div>
   </div>
-  <!--
-  <div class="container">
-    <h2>İletişim Bilgileri</h2>
-    
-    <form id="contact" action="iletisim.php" method="post">
-      <label for="isim">İsim:</label>
-      <input type="text" name="ad" placeholder="İsim">
-      <label for="soyisim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soyisim:</label>
-      <input type="text" name="soyad" placeholder="Soyisim"> <br> <br>
-      <label for="email">Email:</label>
-      <input type="email" name="email" placeholder="Email">
-      <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cinsiyet:&nbsp;&nbsp;</label>
-      Kadın <input type="radio" name="cinsiyet" value="Kadın">
-      &nbsp;&nbsp;Erkek <input type="radio" name="cinsiyet" value="Erkek"> <br> <br>
-      <input type="file"> <br> <br>
-      <label for="dil">Bilinen Yazılım Dilleri:</label> <br>
-      <input type="checkbox" name="dil[]" value="C++ -">C<br>
-      <input type="checkbox" name="dil[]" value="C# -">C++<br>
-      <input type="checkbox" name="dil[]" value="Java -">C#<br>
-      <input type="checkbox" name="dil[]" value=" PHP -">PHP<br>
-      <input type="checkbox" name="dil[]" value=" JavaScript -">Java<br>
-      <input type="checkbox" name="dil[]" value=" Python -">Python <br>
-      <input type="checkbox" name="dil[]" value=" diger -">Diğer <br>
-      <br>
-      <label for="mesajalanı">Mesaj:</label><br>
-      <textarea name="mesaj" id="mesajalanı" cols="30" rows="2" placeholder="Mesaj bırakın..."></textarea>
-      <br> <br>
-      <input type="submit" value="Gönder."> <br> <br>
-      <input type="reset" value="Temizle">
-    </form>
-  </div>
--->
-
   <section class="container">
     <header>İletişim Formu</header>
     <form id="contact" action="iletisim.php" method="post" class="form" onsubmit="return validateForm()">
       <div class="column">
         <div class="input-box">
           <label>İsim</label>
-          <input type="text" name="ad" placeholder="İsminiz" required />
+          <input type="text" name="ad" placeholder="İsminiz" />
         </div>
         <div class="input-box">
           <label>Soyisim</label>
-          <input type="text"name="soyad" placeholder="Soyadınız"required />
+          <input type="text" name="soyad" placeholder="Soyadınız" required />
         </div>
       </div>
       <div class="input-box">
@@ -126,15 +93,15 @@
         <h3>Cinsiyet</h3>
         <div class="gender-option">
           <div class="gender">
-            <input type="radio" id="check-erkek" name="gender" />
+            <input type="radio" id="check-erkek" name="cinsiyet" value="Erkek" />
             <label for="check-erkek">Erkek</label>
           </div>
           <div class="gender">
-            <input type="radio" id="check-kadin" name="gender" />
+            <input type="radio" id="check-kadin" name="cinsiyet" value="Kadın" />
             <label for="check-kadin">Kadın</label>
           </div>
           <div class="gender">
-            <input type="radio" id="check-other" name="gender" />
+            <input type="radio" id="check-other" name="cinsiyet" value="Belirtilmemiş" />
             <label for="check-other">Söylemeyi tercih etmiyorum.</label>
           </div>
         </div>
@@ -143,28 +110,28 @@
         <h3>Bilinen Programlama Dilleri</h3>
         <div class="language-option">
           <div class="language">
-            <input type="checkbox" name="lang" />
-            <label for="check-erkek">C++</label>
+            <input type="checkbox" name="lang[]" value="C++" id="check-cpp" />
+            <label for="check-cpp">C++</label>
           </div>
           <div class="language">
-            <input type="checkbox" name="lang" />
-            <label for="check-erkek">C#</label>
+            <input type="checkbox" name="lang[]" value="C#" id="check-csharp" />
+            <label for="check-csharp">C#</label>
           </div>
           <div class="language">
-            <input type="checkbox" name="lang" />
-            <label for="check-erkek">Pyhton</label>
+            <input type="checkbox" name="lang[]" value="Python" id="check-python" />
+            <label for="check-python">Python</label>
           </div>
           <div class="language">
-            <input type="checkbox" name="lang" />
-            <label for="check-erkek">Java</label>
+            <input type="checkbox" name="lang[]" value="Java" id="check-java" />
+            <label for="check-java">Java</label>
           </div>
           <div class="language">
-            <input type="checkbox" name="lang" />
-            <label for="check-erkek">Web Dilleri</label>
+            <input type="checkbox" name="lang[]" value="Web Dilleri" id="check-web" />
+            <label for="check-web">Web Dilleri</label>
           </div>
           <div class="language">
-            <input type="checkbox" name="lang" />
-            <label for="check-erkek">Diğer</label>
+            <input type="checkbox" name="lang[]" value="Diğer" id="check-diger" />
+            <label for="check-diger">Diğer</label>
           </div>
         </div>
       </div>
@@ -189,23 +156,39 @@
     </form>
   </section>
   <script>
-    function validateForm() {
-      var adInput = document.getElementById("ad");
-      var soyadInput = document.getElementById("soyad");
-      var emailInput = document.getElementById("email");
-  
-      if (adInput.value.trim() === "" || soyadInput.value.trim() === "" || emailInput.value.trim() === "") {
-        alert("Lütfen zorunlu alanları doldurunuz.");
-        return false;
-      }
-  
-      return true;
-    }
-    document.getElementById("contact").addEventListener("submit", function(event) {
-    if (!validateForm()) {
-      event.preventDefault();
-    }
-  });
+var form = document.getElementById("contact");
+form.addEventListener("submit", function (event) {
+  var ad = document.getElementsByName("ad")[0].value;
+  var soyad = document.getElementsByName("soyad")[0].value;
+  var email = document.getElementsByName("email")[0].value;
+
+  if (ad.trim() === "") {
+    alert("İsim alanı boş bırakılamaz");
+    event.preventDefault(); // Form gönderimini engelle
+    return false;
+  }
+
+  if (soyad.trim() === "") {
+    alert("Soyisim alanı boş bırakılamaz");
+    event.preventDefault(); // Form gönderimini engelle
+    return false;
+  }
+
+  if (email.trim() === "") {
+    alert("Email alanı boş bırakılamaz");
+    event.preventDefault(); // Form gönderimini engelle
+    return false;
+  }
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Geçerli bir email adresi giriniz");
+    event.preventDefault(); // Form gönderimini engelle
+    return false;
+  }
+
+  // Tüm doğrulamalar geçerliyse form gönderilecektir
+});
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
