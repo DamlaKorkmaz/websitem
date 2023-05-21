@@ -55,9 +55,30 @@ body{
 }
 .map-container {
     display: flex;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .text-container {
-    margin-left: 20px;
+    flex: 1 1 300px;
+    margin: 0 1rem;
+}
+.map-wrapper {
+    flex: 1 1 300px;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column;
+        
+    }
+
+    .text-container {
+        margin: 1rem 0;
+    }
 }
